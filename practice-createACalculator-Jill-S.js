@@ -36,23 +36,21 @@ where the user can select an operation and input the required values.
 1
 ● Round 23.67891 to 2 decimal places. */
 
+
 //Function 1 - Absolute Value Calculation: Given any number, return its absolute value.
-/*function absValueCalc(number){
- console.log(Math.abs(number));
+function absValueCalc(number){
+ console.log(`Absolute value of ${number}: ${Math.abs(number)}`);
 }
-absValueCalc(-45.67);
 
 //Function 2 - Power Calculation: Calculate and return the value of a base raised to a specific power.
 function pwrCalc(x,y){
-    console.log(Math.pow(x, y));
+    console.log(`${x} raised to the power of ${y}: ${Math.pow(x, y)}`);
 }
-pwrCalc(5,3);
 
 //Function 3 - Square Root Finder: Calculate the square root of a number.
 function sqRoot(num){
-    console.log(Math.sqrt(num));
+    console.log(`Square root of ${num}: ${Math.sqrt(num)}`);
 }
-sqRoot(9);
 
 //Function 4 - Maximum and Minimum Finder: From a given set of numbers, determine the largest and smallest values.
 let arrayMax = function(numArray){
@@ -61,23 +59,33 @@ let arrayMax = function(numArray){
 let arrayMin = function(numArray){
     return Math.min(...numArray);
 };    
-  let numArray = [3, 78, -12, 0.5, 27];
-console.log(arrayMax(numArray), arrayMin(numArray));
-
+  
 //Function 5 - Random Number Generator: Generate a random integer within a specified range.
-function randomNumGenerator(max, min){
+function randomNumGenerator(min, max){
     let randNum = Math.random();
     console.log(randNum);
     return randNum * (max - min) + min;
 }
-console.log(randomNumGenerator(50, 1));
 
 //Function 6 - Custom Rounding: Round a number to a specified number of decimal places.
 function customRound(numToRound){
-    return Math.round(numToRound*100)/100;
+    console.log(`Round ${numToRound} to 2 decimal places: ${Math.round(numToRound*100)/100}`);
 }
-console.log(customRound(23.67891));
-*/
+
+//Test each function with sample inputs to ensure it works as intended.
+
+absValueCalc(-45.67);
+pwrCalc(5,3);
+sqRoot(144);
+
+let numArray = [3, 78, -12, 0.5, 27];
+console.log(`Maximum Number: ${arrayMax(numArray)}, Minimum Number: ${arrayMin(numArray)}`);
+console.log(`Random number between 1 and 50: ${randomNumGenerator(1, 50)}`);
+customRound(23.67891);
+
+/*
+I AM STILL WORKING ON THIS PORTION, BUT WANTED TO AT LEAST SUBMIT THE TOP PORTION AS COMPLETED.
+
 //Combine the individual functions into a single "calculator" program where the user can select an operation and input the required values.
 const readline = (require('readline-sync'));
 
@@ -92,16 +100,17 @@ function getOperation(){
         console.log(operator);
     }
 }
+getOperation();
 
 function getNumbers(){
-    let
+    if(operations === "absolute value"){
+    let choice = readline.question("Enter number for absolute value.");
+    return choice;
+    "The absolute value is:" + Math.abs(choice);
+    }
 }
-
-if (choice === "absolute value"){
-    const choice = readline.question("Enter number for absolute value.");
-    return function absValueCalc(number){
-        console.log(Math.abs(number));
-} 
+getNumbers();
+    
 } else if (choice === "power"){
     return function pwrCalc(x,y){
         console.log(Math.pow(x, y));
@@ -131,3 +140,5 @@ else (choice === "Rounding"){
     }
     console.log(customRound(23.67891));
 }
+}
+*/
